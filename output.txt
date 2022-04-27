@@ -1,0 +1,90 @@
+[s785721@cisone a9]$ rm Main.java
+[s785721@cisone a9]$ nano Main.java
+[s785721@cisone a9]$ javac Main.java
+[s785721@cisone a9]$ java Main
+Usage: java ReaderWriter <number of readers> <number of writers>
+[s785721@cisone a9]$ java Main 2 2
+                Writer 1 starts writing: 1
+                Writer 1 stops writing.
+                Writer 0 starts writing: 2
+                Writer 0 stops writing.
+^C[s785721@cisone a9]$ java Main 20 2
+Reader 19 starts reading: 0
+Reader 19 stops reading.
+Reader 4 starts reading: 0
+Reader 0 starts reading: 0
+Reader 4 stops reading.
+Reader 11 starts reading: 0
+Reader 13 starts reading: 0
+Reader 2 starts reading: 0
+Reader 0 stops reading.
+Reader 14 starts reading: 0
+Reader 13 stops reading.
+Reader 2 stops reading.
+Reader 11 stops reading.
+Reader 18 starts reading: 0
+Reader 19 starts reading: 0
+Reader 19 stops reading.
+Reader 14 stops reading.
+Reader 15 starts reading: 0
+Reader 17 starts reading: 0
+Reader 16 starts reading: 0
+Reader 18 stops reading.
+Reader 15 stops reading.
+Reader 17 stops reading.
+Reader 16 stops reading.
+^C[s785721@cisone a9]$ rm Main.java
+[s785721@cisone a9]$ nano Main.java
+[s785721@cisone a9]$ nano Main.java
+[s785721@cisone a9]$ javac Main.java
+[s785721@cisone a9]$ java Main
+Usage: java ReaderWriter <number of readers> <number of writers>
+[s785721@cisone a9]$ java Main 2 2
+Reader 0 starts reading: 0
+Reader 1 starts reading: 0
+Reader 0 stops reading.
+Reader 1 stops reading.
+Reader 1 starts reading: 0
+test 1
+test 2
+test 3
+test 1
+test 2
+test 3
+Reader 1 stops reading.
+                Writer 0 starts writing: 1
+                Writer 0 stops writing.
+test 4
+^C[s785721@cisone a9]$ rm Main.java
+[s785721@cisone a9]$ nano Main.java
+[s785721@cisone a9]$ javac Main.java
+[s785721@cisone a9]$ java Main 2 2
+Reader 1 starts reading: 0
+test 1
+test 2
+test 3
+Reader 1 stops reading.
+test 1
+^C[s785721@cisone a9]$ java Main 2 5
+test 1
+test 2
+test 3
+                Writer 4 starts writing: 1
+test 1
+test 2
+test 3
+test 1
+test 1
+test 1
+                Writer 4 stops writing.
+test 4
+^C[s785721@cisone a9]$ java Main 5 2
+test 1
+test 2
+test 3
+                Writer 0 starts writing: 1
+test 1
+test 2
+test 3
+                Writer 0 stops writing.
+test 4
