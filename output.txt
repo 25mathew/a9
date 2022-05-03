@@ -1,90 +1,88 @@
-[s785721@cisone a9]$ rm Main.java
-[s785721@cisone a9]$ nano Main.java
-[s785721@cisone a9]$ javac Main.java
-[s785721@cisone a9]$ java Main
-Usage: java ReaderWriter <number of readers> <number of writers>
-[s785721@cisone a9]$ java Main 2 2
-                Writer 1 starts writing: 1
+[s785721@cisone a9]$ java Main 3 3
+                Writer 0 starts writing: 1
+                Writer 0 stops writing.
+                Writer 1 starts writing: 2
                 Writer 1 stops writing.
-                Writer 0 starts writing: 2
-                Writer 0 stops writing.
-^C[s785721@cisone a9]$ java Main 20 2
-Reader 19 starts reading: 0
-Reader 19 stops reading.
-Reader 4 starts reading: 0
-Reader 0 starts reading: 0
-Reader 4 stops reading.
-Reader 11 starts reading: 0
-Reader 13 starts reading: 0
-Reader 2 starts reading: 0
+                Writer 2 starts writing: 3
+                Writer 2 stops writing.
+                Writer 1 starts writing: 4
+                Writer 1 stops writing.
+Reader 0 starts reading: 4
 Reader 0 stops reading.
-Reader 14 starts reading: 0
-Reader 13 stops reading.
+Reader 2 starts reading: 4
 Reader 2 stops reading.
-Reader 11 stops reading.
-Reader 18 starts reading: 0
-Reader 19 starts reading: 0
-Reader 19 stops reading.
-Reader 14 stops reading.
-Reader 15 starts reading: 0
-Reader 17 starts reading: 0
-Reader 16 starts reading: 0
-Reader 18 stops reading.
-Reader 15 stops reading.
-Reader 17 stops reading.
-Reader 16 stops reading.
-^C[s785721@cisone a9]$ rm Main.java
-[s785721@cisone a9]$ nano Main.java
-[s785721@cisone a9]$ nano Main.java
-[s785721@cisone a9]$ javac Main.java
-[s785721@cisone a9]$ java Main
-Usage: java ReaderWriter <number of readers> <number of writers>
-[s785721@cisone a9]$ java Main 2 2
-Reader 0 starts reading: 0
-Reader 1 starts reading: 0
+Reader 1 starts reading: 4
+Reader 1 stops reading.
+                Writer 2 starts writing: 5
+                Writer 2 stops writing.
+                Writer 1 starts writing: 6
+                Writer 1 stops writing.
+                Writer 0 starts writing: 7
+                Writer 0 stops writing.
+                Writer 2 starts writing: 8
+                Writer 2 stops writing.
+                Writer 0 starts writing: 9
+                Writer 0 stops writing.
+                Writer 1 starts writing: 10
+                Writer 1 stops writing.
+                Writer 2 starts writing: 11
+                Writer 2 stops writing.
+                Writer 0 starts writing: 12
+                Writer 0 stops writing.
+                Writer 1 starts writing: 13
+                Writer 1 stops writing.
+                Writer 0 starts writing: 14
+                Writer 0 stops writing.
+                Writer 2 starts writing: 15
+                Writer 2 stops writing.
+                Writer 1 starts writing: 16
+                Writer 1 stops writing.
+                Writer 0 starts writing: 17
+                Writer 0 stops writing.
+                Writer 2 starts writing: 18
+                Writer 2 stops writing.
+                Writer 0 starts writing: 19
+                Writer 0 stops writing.
+                Writer 2 starts writing: 20
+                Writer 2 stops writing.
+                Writer 1 starts writing: 21
+                Writer 1 stops writing.
+                Writer 2 starts writing: 22
+                Writer 2 stops writing.
+                Writer 0 starts writing: 23
+                Writer 0 stops writing.
+                Writer 1 starts writing: 24
+                Writer 1 stops writing.
+                Writer 2 starts writing: 25
+                Writer 2 stops writing.
+                Writer 0 starts writing: 26
+                Writer 0 stops writing.
+                Writer 1 starts writing: 27
+                Writer 1 stops writing.
+Reader 1 starts reading: 27
+Reader 1 stops reading.
+Reader 0 starts reading: 27
 Reader 0 stops reading.
-Reader 1 stops reading.
-Reader 1 starts reading: 0
-test 1
-test 2
-test 3
-test 1
-test 2
-test 3
-Reader 1 stops reading.
-                Writer 0 starts writing: 1
+Reader 2 starts reading: 27
+Reader 2 stops reading.
+                Writer 2 starts writing: 28
+                Writer 2 stops writing.
+                Writer 0 starts writing: 29
                 Writer 0 stops writing.
-test 4
-^C[s785721@cisone a9]$ rm Main.java
-[s785721@cisone a9]$ nano Main.java
-[s785721@cisone a9]$ javac Main.java
-[s785721@cisone a9]$ java Main 2 2
-Reader 1 starts reading: 0
-test 1
-test 2
-test 3
-Reader 1 stops reading.
-test 1
-^C[s785721@cisone a9]$ java Main 2 5
-test 1
-test 2
-test 3
-                Writer 4 starts writing: 1
-test 1
-test 2
-test 3
-test 1
-test 1
-test 1
-                Writer 4 stops writing.
-test 4
-^C[s785721@cisone a9]$ java Main 5 2
-test 1
-test 2
-test 3
-                Writer 0 starts writing: 1
-test 1
-test 2
-test 3
+Reader 2 starts reading: 29
+Reader 2 stops reading.
+                Writer 1 starts writing: 30
+                Writer 1 stops writing.
+                Writer 2 starts writing: 31
+                Writer 2 stops writing.
+                Writer 0 starts writing: 32
                 Writer 0 stops writing.
-test 4
+                Writer 1 starts writing: 33
+                Writer 1 stops writing.
+                Writer 2 starts writing: 34
+                Writer 2 stops writing.
+                Writer 0 starts writing: 35
+                Writer 0 stops writing.
+                Writer 1 starts writing: 36
+                Writer 1 stops writing.
+                Writer 2 starts writing: 37
