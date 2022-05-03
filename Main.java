@@ -1,93 +1,79 @@
 class Database{
   private int readers; // number of active readers
-  private int writers; // number of active writers
+  private int writers; //number of active writers
   private int number;
-
   private Semaphore mutex;
+  private Semaphore mutex1;
   private Semaphore writer_lock;
   private Semaphore reader_lock;
-
   /**
    * Initializes this database.
    */
   public Database(){
     readers = 0;
-	writers = 0;
     number = 0;
+writers = 0;
     mutex = new Semaphore(1);
+mutex1 = new Semaphore(1);
     writer_lock = new Semaphore(1);
-	reader_lock = new Semaphore(1);
+    reader_lock = new Semaphore(1);
   }
-
   /**
    * Read from this database.
    */
   public void read(){
+ 
+reader_lock.sema_wait();
     mutex.sema_wait();
     readers++;
-	while(writers != 0){
-		reader_lock.sema_wait();
-	}
     if (readers == 1){
       writer_lock.sema_wait();
     }
     mutex.sema_post();
     System.err.println("Reader " + Thread.currentThread().getName() + " starts reading: "+number);
-
     // simulate reading time
     final int DELAY = 1000;
     try{
       Thread.sleep((int) (Math.random() * DELAY));
     }catch (InterruptedException e) {}
-
     System.err.println("Reader " + Thread.currentThread().getName() + " stops reading.");
-		while(writers != 0){
-		reader_lock.sema_wait();
-	}
     mutex.sema_wait();
     readers--;
     if (readers == 0){
       writer_lock.sema_post();
     }
     mutex.sema_post();
+reader_lock.sema_post();
   }
-
   /**
    * Writes to this database.
    */
   public void write(){
-	System.out.println("test 1");
-	mutex.sema_wait();
-		System.out.println("test 2");
-	writers++;
-	System.out.println("test 3");
-	mutex.sema_post();
-    writer_lock.sema_wait();
-    number++;
+mutex1.sema_wait();
+    writers++;
+if (writers == 1){
+      reader_lock.sema_wait();
+    }
+mutex1.sema_post();
+writer_lock.sema_wait();
+number++;
     System.err.println("\t\tWriter " + Thread.currentThread().getName() + " starts writing: "+number);
-
     final int DELAY = 5000;
     try{
       Thread.sleep((int) (Math.random() * DELAY));
     }catch (InterruptedException e) {}
-
     System.err.println("\t\tWriter " + Thread.currentThread().getName() + " stops writing.");
-System.out.println("test 4");
-	mutex.sema_wait();
-System.out.println("test 5");
-	writers--;
-System.out.println("test 6");
-	reader_lock.sema_post();
-System.out.println("test 7");
-	mutex.sema_post();
-System.out.println("test 8");
     writer_lock.sema_post();
+mutex1.sema_wait();
+    writers--;
+if (writers == 0){
+      reader_lock.sema_post();
+    }
+    mutex1.sema_post();
   }
 }
-
 class Reader extends Thread{
   private Database database;
-
   /**
    * Creates a Reader for the specified database.
    * @param database database from which to be read.
@@ -97,7 +83,6 @@ class Reader extends Thread{
     super(name);
     this.database = database;
   }
-
   /**
    * Reads.
    */
@@ -111,13 +96,11 @@ class Reader extends Thread{
     }
   }
 }
-
 /**
   This class represents a writer.
 */
 class Writer extends Thread{
   private Database database;
-
   /**
    * Creates a Writer for the specified database.
    * @param database database to which to write.
@@ -127,7 +110,6 @@ class Writer extends Thread{
     super(name);
     this.database = database;
   }
-
   /**
    * Writes.
    */
@@ -141,7 +123,6 @@ class Writer extends Thread{
     }
   }
 }
-
 /**
   This app creates a specified number of readers and
   writers and starts them.
